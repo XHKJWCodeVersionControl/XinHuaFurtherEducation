@@ -1,0 +1,40 @@
+//
+//  CHKJ.pch
+//  新华继续教育
+//
+//  Created by 李李贤军 on 15/7/30.
+//  Copyright (c) 2015年 XH. All rights reserved.
+//
+
+#ifndef EggShell_PrefixHeader_pch
+#define EggShell_PrefixHeader_pch
+
+
+#endif
+#define wideth   woowow
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "MBProgressHUD+Show.h"
+#import "UIBarButtonItem+Extension.h"
+#import "UIView+Extension.h"
+#import "UILabel+Extension.h"
+#import "ZCControl.h"
+#define WIDETH  [UIScreen mainScreen].bounds.size.width
+#define HEIGHT   [UIScreen mainScreen].bounds.size.height
+//iOS7版本的适配
+#define iOS7 [[[UIDevice currentDevice]systemVersion]floatValue]>=7.0
+
+#endif
+//调试log
+#ifdef DEBUG
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define THLog(...) NSLog(__VA_ARGS__)
+#define color(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#else
+#define THLog(...)
+#define randomColor [UIColor colorWithRed:(arc4random_uniform(256))/255.0 green:(arc4random_uniform(256))/255.0 blue:(arc4random_uniform(256))/255.0 alpha:1.0]
+#endif
