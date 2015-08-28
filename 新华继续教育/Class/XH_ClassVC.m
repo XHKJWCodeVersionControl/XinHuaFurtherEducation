@@ -59,7 +59,7 @@
     self.tableView = tableView;
 //    tableView.backgroundColor =[UIColor redColor];
     //不要分割线
-//    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
     self.tableView.sectionHeaderHeight = 50;
     [self clipExtraCellLine:self.tableView];
@@ -133,15 +133,7 @@
     description.frame = CGRectMake(0, 10, WIDETH, 80);
     [self.view addSubview:description];
     
-//    UIButton * b = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-//    b.backgroundColor =[UIColor redColor];
-//    [b addTarget:self action:@selector(bb) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:b];
-}
--(void)bb
-{
-//    XH_ClassPlayVC * c = [[XH_ClassPlayVC alloc] init];
-    [self.navigationController pushViewController:[[XH_ClassPlayVC alloc]init] animated:YES];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
