@@ -9,5 +9,6 @@
 #import "XH_BaseVC.h"
 
 @interface XH_ClassPlayVC : XH_BaseVC
+@property(nonatomic,strong)NSString * str;
 
 @end

@@ -45,6 +45,10 @@
 		94E2C9AF1B88454F001E3FDD /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E2C9AB1B88454F001E3FDD /* UIView+Extension.m */; };
 		94E2C9B31B884574001E3FDD /* ZCControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E2C9B21B884574001E3FDD /* ZCControl.m */; };
 		94E2C9B81B8852EA001E3FDD /* XH_ClassPlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E2C9B71B8852EA001E3FDD /* XH_ClassPlayVC.m */; };
+		94E3EAD41B90AD39007A699E /* Headview.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E3EAD31B90AD39007A699E /* Headview.m */; };
+		94E3EADA1B90AD5C007A699E /* THFriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E3EAD71B90AD5C007A699E /* THFriendModel.m */; };
+		94E3EADB1B90AD5C007A699E /* THGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E3EAD91B90AD5C007A699E /* THGroupModel.m */; };
+		94E3EADD1B90AD6C007A699E /* ffendList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94E3EADC1B90AD6C007A699E /* ffendList.plist */; };
 		94E957B91B84D672004141C6 /* XH_LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E957B81B84D672004141C6 /* XH_LoginVC.m */; };
 		94E957BD1B84EA49004141C6 /* XH_ClassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E957BC1B84EA49004141C6 /* XH_ClassVC.m */; };
 		94EFC23B1B8028C600833068 /* XH_AFRequestState.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EFC23A1B8028C600833068 /* XH_AFRequestState.m */; };
@@ -137,6 +141,13 @@
 		94E2C9B21B884574001E3FDD /* ZCControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCControl.m; sourceTree = "<group>"; };
 		94E2C9B61B8852EA001E3FDD /* XH_ClassPlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XH_ClassPlayVC.h; sourceTree = "<group>"; };
 		94E2C9B71B8852EA001E3FDD /* XH_ClassPlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XH_ClassPlayVC.m; sourceTree = "<group>"; };
+		94E3EAD21B90AD39007A699E /* Headview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Headview.h; sourceTree = "<group>"; };
+		94E3EAD31B90AD39007A699E /* Headview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Headview.m; sourceTree = "<group>"; };
+		94E3EAD61B90AD5C007A699E /* THFriendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THFriendModel.h; sourceTree = "<group>"; };
+		94E3EAD71B90AD5C007A699E /* THFriendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THFriendModel.m; sourceTree = "<group>"; };
+		94E3EAD81B90AD5C007A699E /* THGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THGroupModel.h; sourceTree = "<group>"; };
+		94E3EAD91B90AD5C007A699E /* THGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THGroupModel.m; sourceTree = "<group>"; };
+		94E3EADC1B90AD6C007A699E /* ffendList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ffendList.plist; path = Class/model/ffendList.plist; sourceTree = "<group>"; };
 		94E957B71B84D672004141C6 /* XH_LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XH_LoginVC.h; sourceTree = "<group>"; };
 		94E957B81B84D672004141C6 /* XH_LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XH_LoginVC.m; sourceTree = "<group>"; };
 		94E957BB1B84EA49004141C6 /* XH_ClassVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XH_ClassVC.h; sourceTree = "<group>"; };
@@ -313,6 +324,7 @@
 		94A9F0371B692B900051611F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				94E3EADC1B90AD6C007A699E /* ffendList.plist */,
 				94A9F0381B692B900051611F /* Info.plist */,
 				94A9F0391B692B900051611F /* main.m */,
 				9458A7651B69D07F00CF9C97 /* CHKJ.pch */,
@@ -358,6 +370,8 @@
 		94B55F8C1B8637BC005A9B81 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				94E3EAD21B90AD39007A699E /* Headview.h */,
+				94E3EAD31B90AD39007A699E /* Headview.m */,
 				94B55F8D1B8637E1005A9B81 /* descriptionView.h */,
 				94B55F8E1B8637E1005A9B81 /* descriptionView.m */,
 				94B55F901B8637F5005A9B81 /* description.xib */,
@@ -428,6 +442,17 @@
 			path = Play;
 			sourceTree = "<group>";
 		};
+		94E3EAD51B90AD5C007A699E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				94E3EAD61B90AD5C007A699E /* THFriendModel.h */,
+				94E3EAD71B90AD5C007A699E /* THFriendModel.m */,
+				94E3EAD81B90AD5C007A699E /* THGroupModel.h */,
+				94E3EAD91B90AD5C007A699E /* THGroupModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		94E957B31B84D47F004141C6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +465,7 @@
 		94E957BA1B84EA2E004141C6 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				94E3EAD51B90AD5C007A699E /* model */,
 				94E2C9B51B8852B6001E3FDD /* Play */,
 				94B55F8C1B8637BC005A9B81 /* SubView */,
 				94E957BB1B84EA49004141C6 /* XH_ClassVC.h */,
@@ -565,6 +591,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E3EADD1B90AD6C007A699E /* ffendList.plist in Resources */,
 				94A9F0431B692B900051611F /* Main.storyboard in Resources */,
 				94A9F0481B692B900051611F /* LaunchScreen.xib in Resources */,
 				9458A7711B69E1DA00CF9C97 /* MJRefresh.bundle in Resources */,
@@ -629,6 +656,7 @@
 				9458A7591B69BE9C00CF9C97 /* GAdapter.m in Sources */,
 				94EFC23B1B8028C600833068 /* XH_AFRequestState.m in Sources */,
 				94B55F8B1B862077005A9B81 /* XH_RecordVC.m in Sources */,
+				94E3EADA1B90AD5C007A699E /* THFriendModel.m in Sources */,
 				94A9F0401B692B900051611F /* ViewController.m in Sources */,
 				94A9F03D1B692B900051611F /* AppDelegate.m in Sources */,
 				9458A7641B69C1E500CF9C97 /* MBProgressHUD.m in Sources */,
@@ -647,9 +675,11 @@
 				9458A75B1B69BE9C00CF9C97 /* GObjAdapter.m in Sources */,
 				9458A77D1B69EB5600CF9C97 /* XH_LoginAndRegisterVC.m in Sources */,
 				9458A75D1B69BE9C00CF9C97 /* GVarAdapter.m in Sources */,
+				94E3EAD41B90AD39007A699E /* Headview.m in Sources */,
 				94EFC2421B802C3400833068 /* XH_StartVC.m in Sources */,
 				94E2C9B31B884574001E3FDD /* ZCControl.m in Sources */,
 				9458A7801B69EC2F00CF9C97 /* LoginAndRegisterRequest.m in Sources */,
+				94E3EADB1B90AD5C007A699E /* THGroupModel.m in Sources */,
 				94A9F03A1B692B900051611F /* main.m in Sources */,
 				94E2C9B81B8852EA001E3FDD /* XH_ClassPlayVC.m in Sources */,
 				94E2C9AD1B88454F001E3FDD /* UIBarButtonItem+Extension.m in Sources */,
