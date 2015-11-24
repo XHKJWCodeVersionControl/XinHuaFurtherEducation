@@ -10,5 +10,6 @@
 
 @interface XH_ClassPlayVC : XH_BaseVC
 @property(nonatomic,strong)NSString * str;
+@property(nonatomic,copy)NSString * videoPath;
 
 @end

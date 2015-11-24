@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface XH_TabBarCntroller : UITabBarController
+#import "SelectTabBar.h"
+@interface XH_TabBarCntroller : UITabBarController<SelectTabBarDelegate>
 {
 @private
     UIImageView * _tabBar;

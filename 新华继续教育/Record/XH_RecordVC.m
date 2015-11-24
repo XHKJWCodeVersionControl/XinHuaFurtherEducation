@@ -7,22 +7,51 @@
 //
 
 #import "XH_RecordVC.h"
+#import "studyRecordTableViewCell.h"
+@interface XH_RecordVC ()<UITableViewDelegate,UITableViewDataSource>
+{}
 
-@interface XH_RecordVC ()
-
+@property(nonatomic,strong)UITableView * tableView;
+@property(nonatomic,strong)NSArray * dataArray;
 @end
 
 @implementation XH_RecordVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    UINavigationBar *bar = [UINavigationBar appearance];
-//    [bar setBarTintColor:UIColorFromRGB(0x36B256)];
-//    [bar setTintColor:[UIColor whiteColor]];
-    self.title = @"学习记录";
-    // Do any additional setup after loading the view.
-}
+    [baseClass baseNavcontroller:self titleStr:@"学习记录"];
+    [self createTableView ];
 
+}
+-(void)createTableView
+{
+    UITableView * tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDETH, HEIGHT)];
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    tableView.tableFooterView = [[UIView alloc] init];
+    tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
+    self.tableView = tableView;
+    [self.view addSubview:tableView];
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    studyRecordTableViewCell * cell = [studyRecordTableViewCell cellTableViewCell:tableView];
+        NSMutableAttributedString *markLabelStr = [[NSMutableAttributedString alloc] initWithString:cell.studyRecordLable.text];
+        [markLabelStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,1)];
+    
+        cell.studyRecordLable.attributedText = markLabelStr;
+
+    return cell;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 40;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

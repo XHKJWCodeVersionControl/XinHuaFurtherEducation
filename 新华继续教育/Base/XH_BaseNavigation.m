@@ -46,7 +46,7 @@
 {
     if (self.viewControllers.count > 0)
     {
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itermWithTarget:self Action:@selector(pop) Image:@"返回-35x35" HighImage:@"返回-35x35"];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itermWithTarget:self Action:@selector(pop) Image:@"返回" HighImage:@"返回"];
         
 //        viewController.hidesBottomBarWhenPushed = YES;
         

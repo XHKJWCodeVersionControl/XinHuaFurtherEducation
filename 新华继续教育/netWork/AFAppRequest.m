@@ -83,6 +83,7 @@
 
 @end
 @implementation AFAppRequest
+
 +(AFHTTPRequestOperationManager *)sharedManager
 {
     static AFHTTPRequestOperationManager* _om = nil;
@@ -133,15 +134,17 @@
     AFRequestState * State = [AFRequestState new];
     
     AFHTTPRequestOperationManager*manager=[self sharedClient];
-    
-      manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    
-//    manager.responseSerializer.acceptableContentTypes =[NSSet setWithObject:@"text/html"];
+//    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+//     manager.responseSerializer = [AFJSONResponseSerializer serializer];
+//    manager.securityPolicy.allowInvalidCertificates = YES;
+    /*设置返回时间超时**/
+    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    manager.requestSerializer.timeoutInterval = 8.f;
+    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     
     [manager GET:url parameters:param success:^(AFHTTPRequestOperation * operation, id responseObject)
      {
          [self handleResponse:responseObject Succ:succ Fail:fail Resp:resp State:State];
-         NSLog(responseObject[@"msg"]);
          
          
      } failure:^(AFHTTPRequestOperation *operation, NSError *error)
@@ -149,22 +152,42 @@
          NSNumber * errcode = [NSNumber numberWithInteger:error.code];
          fail([errcode intValue],error);
          [State setEnd];
+         NSLog(@"Error: %@", error);
+         NSLog ( @"operation: %@" , operation. responseString );
+         
      }];
-    
     [State start];
     return State;
     
 }
 
 //统一错误处理
-+(void)error_hanlde:(int)errCode Witherr:(NSError *)err {
++(void)error_hanlde:(int)errCode Witherr:(NSError *)err
+{
     
-    
-    if(errCode == 1)
-    {
-        [MBProgressHUD creatembHub:@"用户名不存在"];
+    if (errCode ==1001) {
+        [MBProgressHUD creatembHub:@"其他错误"];
+    }if (errCode == 1002) {
+        [MBProgressHUD creatembHub:@"身份信息正确"];
+    }if (errCode == 1003) {
+        [MBProgressHUD creatembHub:@"接口key验证不正确"];
+    }if ( errCode== 1004) {
+        [MBProgressHUD creatembHub:@"用户名或密码为空"];
+    }if (errCode == 1005) {
+        [MBProgressHUD creatembHub:@"学习卡号或者密码为空"];
+    }if (errCode == 1006) {
+        [MBProgressHUD creatembHub:@"身份证号或者姓名为空"];
+    }if (errCode == 1007) {
+        [MBProgressHUD creatembHub:@"身份证号或者姓名不符合规则"];
+    }if (errCode == 1008) {
+        [MBProgressHUD creatembHub:@"学员信息不存在"];
+    }if (errCode == 1009) {
+        [MBProgressHUD creatembHub:@"服务器请求出错"];
+    }if (errCode == 1011) {
+        [MBProgressHUD creatembHub:@"没有开通课程"];
+    }if (errCode == 1012) {
+        [MBProgressHUD creatembHub:@"登录类型不正确"];
     }
-    
     
 }
 
@@ -185,15 +208,19 @@
             return;
         }
         
-        int error_code = [[responseObject objectForKey:@"error_code"] intValue];
+        int error_code = [[responseObject objectForKey:@"Code"] intValue];
         
         if( error_code != 0)
         {
             fail(error_code, nil);
             return;
         }
-        
-        id data = [Gson fromObj:[responseObject objectForKey:@"data"] Cls:resp];
+        if(!resp)
+        {
+            succ(responseObject);
+            return;
+        }
+        id data = [Gson fromObj:[responseObject objectForKey:@"Data"] Cls:resp];
         
         if(data == nil && resp == [NSNull class])
         {

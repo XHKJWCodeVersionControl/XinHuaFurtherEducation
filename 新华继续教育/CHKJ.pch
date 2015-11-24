@@ -20,6 +20,16 @@
 #import "UIView+Extension.h"
 #import "UILabel+Extension.h"
 #import "ZCControl.h"
+#import "IQKeyboardManager.h"
+#import "MyMD5.h"
+#import "AppDelegate.h"
+#import "KrVideoPlayerController.h"
+#import "DataBase.h"
+#import "videoModel.h"
+#import "baseClass.h"
+#import "AFAppRequest.h"
+#import "XH_AFRequestState.h"
+#define base_Url @"http://api.kj2100.com/"
 #define WIDETH  [UIScreen mainScreen].bounds.size.width
 #define HEIGHT   [UIScreen mainScreen].bounds.size.height
 //iOS7版本的适配

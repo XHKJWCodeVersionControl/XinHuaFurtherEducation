@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "XH_StartVC.h"
+#import "IQTitleBarButtonItem.h"
+#import "XH_BaseNavigation.h"
 @interface AppDelegate ()
 
 @end
@@ -19,19 +21,51 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     XH_StartVC * start = [[XH_StartVC alloc] init];
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:start];
-    self.window.rootViewController = start;
+   XH_BaseNavigation *nav = [[XH_BaseNavigation alloc] initWithRootViewController:start];
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
-    // Override point for customization after application launch.
+    
      
     UINavigationBar *bar = [UINavigationBar appearance];
     [bar setBarTintColor:UIColorFromRGB(0x36B256)];
     bar.translucent = NO;
     [bar setTintColor:[UIColor whiteColor]];
-  
+    [self keyBoard];
+    /*加密token**/
+    NSString *  tokenStr = @"?/danker#$%?%";
+    NSString * myMd5_token = [MyMD5 md5:tokenStr];
+    self.token = myMd5_token;
+    
+    
     return YES;
 }
-
+#pragma mark -- 键盘收回处理
+-(void)keyBoard
+{
+    [[IQKeyboardManager sharedManager] setEnable:YES];
+    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:YES];
+    
+    [[IQKeyboardManager sharedManager] setToolbarManageBehaviour:IQAutoToolbarBySubviews];
+    [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
+    [[IQKeyboardManager sharedManager] setCanAdjustTextView:YES];
+    [[IQKeyboardManager sharedManager] setShouldShowTextFieldPlaceholder:YES];
+    
+    IQTitleBarButtonItem * done =[[IQTitleBarButtonItem alloc] initWithFrame:CGRectMake(WIDETH-60, 0, 440, 40) Title:@"完成"];
+    
+}
++(AppDelegate*)instance
+{
+    return (AppDelegate*)[UIApplication sharedApplication].delegate;
+}
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(nullable UIWindow *)window
+{
+    if( self.ori_flag == 1){
+        return UIInterfaceOrientationMaskAll;
+    }
+    else{
+        return UIInterfaceOrientationMaskPortrait;
+    }
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -40,10 +74,6 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-+(AppDelegate*)instance
-{
-    return (AppDelegate*)[UIApplication sharedApplication].delegate;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

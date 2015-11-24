@@ -11,6 +11,8 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property(nonatomic,copy)NSString * token;
+@property(nonatomic,assign)int ori_flag;
 +(AppDelegate*)instance;
 @end
 

@@ -19,8 +19,8 @@
     self.view.backgroundColor =[UIColor whiteColor];
    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
    self.navigationController.navigationBar.translucent = NO;
-    XH_TabBarCntroller * main = [[XH_TabBarCntroller alloc] init];
-    [main.mainTabBar resignFirstResponder];
+//    XH_TabBarCntroller * main = [[XH_TabBarCntroller alloc] init];
+//    [main.mainTabBar resignFirstResponder];
     
 }
 

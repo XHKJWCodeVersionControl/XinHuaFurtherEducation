@@ -8,72 +8,210 @@
 
 #import "XH_RegionSelectionVC.h"
 #import "XH_LoginVC.h"
-@interface XH_RegionSelectionVC ()
+#import "RegionHeadView.h"
+#import "THFriendModel.h"
+#import "THGroupModel.h"
+#import "LoginAndRegisterRequest.h"
+#import "XH_AFRequestState.h"
+@interface XH_RegionSelectionVC ()<UITableViewDataSource,UITableViewDelegate,regionHeadViewDelegate>
 @property(nonatomic,strong)NSArray * regionArray;
 @property(nonatomic,strong)UIButton * regionButton;
 @property(nonatomic,strong)NSArray * detailArray;
 @property(nonatomic,strong)UIButton * detailBtn;
+@property(nonatomic,strong)UITableView * tableView;
+@property(nonatomic,strong)NSArray * dataArray;
+@property(nonatomic,strong)NSArray * dataLoadArray;
+@property(nonatomic,strong) RegionHeadView * head;
+@property(nonatomic,strong)NSMutableArray  * topDataArray;
+
 @end
 
 @implementation XH_RegionSelectionVC
+//加载数据
+-(NSArray *)dataArray
+{
+    
+    if (!_dataArray) {
+        NSString * path = [[NSBundle mainBundle] pathForResource:@"ffendList.plist" ofType:nil];
+        
+        
+        NSArray * array = [NSArray arrayWithContentsOfFile:path];
+        NSMutableArray * muArray = [NSMutableArray arrayWithCapacity:array.count];
+        for (NSDictionary * dict in array) {
+            THGroupModel * model = [THGroupModel GroupWithDict:dict];
+            [muArray  addObject: model];
+        }
+        
+        _dataArray = [muArray copy];
+    }
+    return _dataArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    /*测试**/
+//    [[LoginAndRegisterRequest loginWithSucc:^(NSDictionary *DataDic) {
+//        
+//      
+//
+//        
+//    }] addNotifaction:[MBProgressHUD mbHubShow]];
+    
+    self.dataLoadArray = [NSArray array];
     self.view.backgroundColor =[UIColor whiteColor];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     self.view.backgroundColor = UIColorFromRGB(0xeeeeee);
     [self setStatus];
+   [self createView];
+    
+     [self  loadData];
     }
--(void)setStatus
+-(void)loadData
 {
 
-    UIView * navBgViw = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDETH, 64)];
-    navBgViw.backgroundColor = UIColorFromRGB(0x36B256);
-    [self.view addSubview:navBgViw];
-    UILabel * titleLable = [[UILabel alloc] initWithFrame:CGRectMake((WIDETH -130)/2, 20, 130, 44)];
-    titleLable.textColor = UIColorFromRGB(0xFFFFFF);
-    titleLable.font = [UIFont systemFontOfSize:26];
-    titleLable.text  = @"新华会计网";
-    [navBgViw addSubview:titleLable];
+[[XH_AFRequestState regionSelectionWithSucc:^(NSDictionary *DataDic) {
+ 
+    
+  self.dataLoadArray = (NSArray*)DataDic[@"Data"];
+    
+    
+    
+    
+   
+//    
+//    for (int  i = 0; i < self.dataArray.count; i++) {
+//        if ([[NSString stringWithFormat:@"%d",self.dataArray[i][@"CitysList"][0][@"TopState"]] isEqualToString:[NSString stringWithFormat:@"%d",1]] ) {
+//            
+////        [self.topDataArray addObject:self.dataArray[i][@"CitysList"][0][@"AreaName"]];
+//            self.topDataArray = [NSMutableArray arrayWithObject:self.dataArray[i][@"CitysList"][0]];
+//            
+//        }
+//    }
+    
+    
+    
+//    /*置顶地区**/
+//    [self regionView];
+//    //tableView地区
+//    [self createView];
+    
+}] addNotifaction:[MBProgressHUD mbHubShow]];
+}
+-(void)createView
+{
+    int count ;
+   if([[NSString stringWithFormat:@"%d",(int)self.regionArray.count % 4] isEqual:[NSString stringWithFormat:@"%d",0]])
+   {
+       count = (int)self.regionArray.count/4;
+   }else
+   {
+    count = (int)self.regionArray.count/4+1;
+   }
+
+    UITableView *   tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 44+36*count, WIDETH,HEIGHT-64-49-36*count )];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.showsVerticalScrollIndicator = NO;
+    self.tableView = tableView;
+        [self.view addSubview:tableView];
+    self.tableView.backgroundColor = UIColorFromRGB(0xeeeeee);
+    self.tableView.sectionHeaderHeight = 50;
+   [self clipExtraCellLine:self.tableView];
+
+}
+
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    
+    return  self.dataArray.count;
+
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    THGroupModel * groupModel = self.dataArray[section];
+   
+    NSInteger count = groupModel.isOpen?1:0;
+    return count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString * identifier = @"freighdCell";
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+    }
+//    THGroupModel * groupModel = self.dataArray[indexPath.section];
+//    THFriendModel * freightModel = groupModel.friends[indexPath.row];
+//    
+//    
+//    cell.textLabel.text = freightModel.name;
+//    cell.detailTextLabel.text = freightModel.intro;
+    
+    self.regionArray = @[@"北京",@"天津",@"甘肃",@"青海",@"新疆",@"安徽",@"宁夏",@"淮安",@"福州",@"新疆建设兵团"];
+    for (int i = 0; i < self.regionArray.count; i++) {
+        self.regionButton =[[UIButton alloc] initWithFrame:CGRectMake(15+i%4*(WIDETH-23)/4.0, i/4*36+5, (WIDETH-30-24)/4.0, 28)];
+        //        self.regionButton
+        //        .backgroundColor = [UIColor redColor];
+        [cell addSubview:self.regionButton];
+        [self.regionButton setTitle:self.regionArray[i] forState:UIControlStateNormal];
+        [self.regionButton setTitleColor:UIColorFromRGB(0x36B256) forState:UIControlStateNormal];
+        self.regionButton.backgroundColor =[UIColor whiteColor];
+        self.regionButton.titleLabel.font = [UIFont systemFontOfSize:11];
+        [self.regionButton addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.backgroundColor = UIColorFromRGB(0xeeeeee);
+    return cell;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    return 110;
+}
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    RegionHeadView * head = [RegionHeadView regionheadView:tableView];
+    
+    head.delegate = self;
+    head.groupModel = self.dataArray[section];
+    
+    self.head = head;
+
+    return head;
+    
+    
+    
+}
+-(void)clipExtraCellLine:(UITableView*)tableView
+{
+    UIView * view = [[UIView alloc] init];
+    view.backgroundColor =[UIColor clearColor];
+    [self.tableView setTableFooterView:view];
+}
+-(void)regionHeadView:(RegionHeadView *)View
+{
+    [self.tableView reloadData];
+
+}
+
+#pragma mark -- 导航
+-(void)setStatus
+{
+    [baseClass baseNavcontroller:self titleStr:@"新华会计网"];
 /*收缩框**/
     [self search];
+    /*置顶地区**/
     [self regionView];
-    /*分栏**/
-    [self detailRegin];
-}
--(void)detailRegin
-{
-    UIView * dedtail = [[UIView alloc] initWithFrame:CGRectMake(15, 108+84+24, WIDETH-30, 28)];
-    dedtail.backgroundColor =[UIColor whiteColor];
-    [self.view addSubview:dedtail];
-    UILabel * detailLable =[[UILabel alloc] initWithFrame:CGRectMake(15, 0,60, 28)];
-    detailLable.text = @"广东";
-    detailLable.font = [UIFont systemFontOfSize:12];
-    detailLable.textColor = UIColorFromRGB(0x4A4A4A);
-    [dedtail addSubview:detailLable];
-    UIImageView * detailImageView = [[UIImageView alloc] initWithFrame:CGRectMake(dedtail.frame.size.width - 30, 13, 8, 13)];
-    detailImageView.image =[UIImage imageNamed:@"35x35"];
-    [dedtail addSubview:detailImageView];
-    /*详细地址**/
-    self.detailArray = @[@"省直属",@"东莞",@"珠海",@"深圳",@"惠州",@"茂名",@"化州",@"高州",@"信宜",@"云浮"];
-    for (int i = 0; i < self.detailArray.count; i++) {
-        self.detailBtn =[[UIButton alloc] initWithFrame:CGRectMake(15+i%4*(WIDETH-23)/4.0, 252+i/4*36, (WIDETH-30-24)/4.0, 28)];
-//                self.detailBtn
-//                .backgroundColor = [UIColor redColor];
-        [self.view addSubview:self.detailBtn];
-        [self.detailBtn setTitle:self.detailArray[i] forState:UIControlStateNormal];
-        [self.detailBtn setTitleColor:UIColorFromRGB(0x797979) forState:UIControlStateNormal];
-        self.detailBtn.backgroundColor =[UIColor whiteColor];
-        self.detailBtn.titleLabel.font = [UIFont systemFontOfSize:11];
-//        [self.detailBtn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-    }
-    
 }
 -(void)regionView
 {
-    self.regionArray = @[@"北京",@"天津",@"甘肃",@"青海",@"新疆",@"安徽",@"宁夏",@"淮安",@"福州",@"新疆建设兵团"];
+    
+    self.regionArray = @[@"北京",@"天津",@"北京",@"天津",@"甘肃",@"青海",@"新疆",@"安徽",@"宁夏",@"淮安",@"福州",@"新疆建设兵团"];
     for (int i = 0; i < self.regionArray.count; i++) {
-        self.regionButton =[[UIButton alloc] initWithFrame:CGRectMake(15+i%4*(WIDETH-23)/4.0, 108+i/4*36, (WIDETH-30-24)/4.0, 28)];
+        self.regionButton =[[UIButton alloc] initWithFrame:CGRectMake(15+i%4*(WIDETH-23)/4.0, 44+i/4*36, (WIDETH-30-24)/4.0, 28)];
 //        self.regionButton
 //        .backgroundColor = [UIColor redColor];
         [self.view addSubview:self.regionButton];
@@ -88,12 +226,12 @@
 {
     XH_LoginVC * login = [[XH_LoginVC alloc] init];
     NSLog(@"111");
-    login.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+//    login.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 
-    [self presentViewController:login animated:YES completion:nil];
-}
+    [self.navigationController pushViewController:login animated:YES];
+    }
 -(void)search{
-    UIView * bgView = [[UIView alloc] initWithFrame:CGRectMake(15, 72, WIDETH-30, 28)];
+    UIView * bgView = [[UIView alloc] initWithFrame:CGRectMake(15, 8, WIDETH-30, 28)];
     [self.view addSubview:bgView];
     bgView.backgroundColor = [UIColor whiteColor];
     UIImageView * leftView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 14, 14)];
@@ -111,14 +249,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

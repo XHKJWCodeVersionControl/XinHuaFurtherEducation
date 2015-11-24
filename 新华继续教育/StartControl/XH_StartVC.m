@@ -8,12 +8,23 @@
 
 #import "XH_StartVC.h"
 #import "XH_RegionSelectionVC.h"
+#import "LoginAndRegisterRequest.h"
 @interface XH_StartVC ()
 @property(nonatomic,strong)UIButton * startBtn;
 @end
 
 @implementation XH_StartVC
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    UINavigationBar *navigationBar = [UINavigationBar appearance];
+    
+    [navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    navigationBar.shadowImage = [[UIImage alloc] init];
+    
+    
 
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor =[UIColor whiteColor];
@@ -25,18 +36,18 @@
 -(void)createView
 {
 /*标题**/
-    UILabel * tilteLable = [[UILabel alloc] initWithFrame:CGRectMake((WIDETH-180)/2, 120, 180, 36)];
+    UILabel * tilteLable = [[UILabel alloc] initWithFrame:CGRectMake((WIDETH-180)/2, 120-64, 180, 36)];
     tilteLable.text= @"新华会计网";
     tilteLable.font = [UIFont systemFontOfSize:36];
     tilteLable.textColor = UIColorFromRGB(0xFFFFFF);
     [self.view addSubview:tilteLable];
-    UILabel * detailLable  = [[UILabel alloc] initWithFrame:CGRectMake((WIDETH-120)/2, 170, 120, 12)];
+    UILabel * detailLable  = [[UILabel alloc] initWithFrame:CGRectMake((WIDETH-120)/2, 170-64, 120, 12)];
     detailLable.text = @"会计人的网上专家课堂";
     detailLable.textColor= UIColorFromRGB(0xFFFFFF);
     detailLable.font = [UIFont systemFontOfSize:12];
     [self.view addSubview:detailLable];
     /*开始按钮**/
-    UIButton * stratBtn = [[UIButton alloc] initWithFrame:CGRectMake(WIDETH/4.0, (HEIGHT-35)/2.0, WIDETH/2.0, 35)];
+    UIButton * stratBtn = [[UIButton alloc] initWithFrame:CGRectMake(WIDETH/4.0, (HEIGHT-35)/2.0-64, WIDETH/2.0, 35)];
     stratBtn.backgroundColor = UIColorFromRGB(0xFFFFFF);
     
     [stratBtn setTitle:@"开始学习" forState:UIControlStateNormal];
@@ -51,10 +62,11 @@
 #pragma mark - - 按钮事件
 -(void)startBtbClick
 {
+    self.navigationController.navigationBarHidden  = NO;
     XH_RegionSelectionVC * selection =[[XH_RegionSelectionVC alloc] init];
-    selection.modalTransitionStyle = UIModalPresentationPageSheet;
-    [self presentViewController:selection animated:YES completion:nil];
-
+//    selection.modalTransitionStyle = UIModalPresentationPageSheet;
+//    [self presentViewController:selection animated:YES completion:nil];
+    [self.navigationController pushViewController:selection animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

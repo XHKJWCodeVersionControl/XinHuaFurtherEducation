@@ -15,13 +15,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //    [LoginAndRegisterRequest registerWithSucc:^(NSDictionary *DataDic) {
-    //
-    //    } WithUserName:@"wsdwsd" WithPassword:@"wsd2023243" WithUserType:1 WithSource:6 WithPhoneNum:@"13522272537" WithEmail:@"272535439@qq.com"];
-    [LoginAndRegisterRequest loginWithSucc:^(NSDictionary *DataDic) {
-        
-    } WithUserName:@"wsdwsd" WithPassword:@"wsd2023243"];
-
+//    //    [LoginAndRegisterRequest registerWithSucc:^(NSDictionary *DataDic) {
+//    //
+//    //    } WithUserName:@"wsdwsd" WithPassword:@"wsd2023243" WithUserType:1 WithSource:6 WithPhoneNum:@"13522272537" WithEmail:@"272535439@qq.com"];
+//    [LoginAndRegisterRequest loginWithSucc:^(NSDictionary *DataDic) {
+//        
+//    } WithUserName:@"wsdwsd" WithPassword:@"wsd2023243"];
+//
 }
 
 - (void)didReceiveMemoryWarning {

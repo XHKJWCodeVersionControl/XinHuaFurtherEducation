@@ -122,7 +122,7 @@
     UISlider *slider = [[UISlider alloc]initWithFrame:rect];
     slider.minimumValue = 0;
     slider.maximumValue = 1;
-    [slider setThumbImage:[UIImage imageNamed:@"qiu"] forState:UIControlStateNormal];
+//    [slider setThumbImage:[UIImage imageNamed:@"qiu"] forState:UIControlStateNormal];
     slider.maximumTrackTintColor = [UIColor grayColor];
     slider.minimumTrackTintColor = [UIColor yellowColor];
     slider.continuous = YES;

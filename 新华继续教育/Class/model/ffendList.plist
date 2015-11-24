@@ -7,64 +7,31 @@
 		<array>
 			<dict>
 				<key>intro</key>
-				<string>我是李贤均</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/01/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
 			<dict>
 				<key>intro</key>
-				<string>我是好人</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/01/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
 			<dict>
 				<key>intro</key>
-				<string>我是坏人</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/01/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
 			<dict>
 				<key>intro</key>
-				<string>我司大人</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/01/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
 			<dict>
 				<key>intro</key>
-				<string>我是好人</string>
-				<key>name</key>
-				<string>昵称</string>
-			</dict>
-		</array>
-		<key>online</key>
-		<string>3</string>
-		<key>name</key>
-		<string>好丽友</string>
-	</dict>
-	<dict>
-		<key>friends</key>
-		<array>
-			<dict>
-				<key>intro</key>
-				<string>我是好人</string>
-				<key>name</key>
-				<string>昵称</string>
-			</dict>
-			<dict>
-				<key>intro</key>
-				<string>我是他</string>
-				<key>name</key>
-				<string>昵称</string>
-			</dict>
-			<dict>
-				<key>intro</key>
-				<string>我是好人</string>
-				<key>name</key>
-				<string>昵称</string>
-			</dict>
-			<dict>
-				<key>intro</key>
-				<string>我是好人</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/01/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
@@ -72,26 +39,59 @@
 		<key>online</key>
 		<string>3</string>
 		<key>name</key>
-		<string>好丽友</string>
+		<string>行政事业类</string>
 	</dict>
 	<dict>
 		<key>friends</key>
 		<array>
 			<dict>
 				<key>intro</key>
-				<string>我是李贤均</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/02/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
 			<dict>
 				<key>intro</key>
-				<string>我是李贤均</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/02/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
 			<dict>
 				<key>intro</key>
-				<string>我是李贤均</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/02/webpage/start.mp4</string>
+				<key>name</key>
+				<string>昵称</string>
+			</dict>
+			<dict>
+				<key>intro</key>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/02/webpage/start.mp4</string>
+				<key>name</key>
+				<string>昵称</string>
+			</dict>
+		</array>
+		<key>online</key>
+		<string>3</string>
+		<key>name</key>
+		<string>企业类</string>
+	</dict>
+	<dict>
+		<key>friends</key>
+		<array>
+			<dict>
+				<key>intro</key>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/03/webpage/start.mp4</string>
+				<key>name</key>
+				<string>昵称</string>
+			</dict>
+			<dict>
+				<key>intro</key>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/03/webpage/start.mp4</string>
+				<key>name</key>
+				<string>昵称</string>
+			</dict>
+			<dict>
+				<key>intro</key>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/03/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
@@ -99,26 +99,26 @@
 		<key>online</key>
 		<string>4</string>
 		<key>name</key>
-		<string>lixianjun</string>
+		<string>企业类</string>
 	</dict>
 	<dict>
 		<key>friends</key>
 		<array>
 			<dict>
 				<key>intro</key>
-				<string>接收到哈</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/04/webpage/start.mp4</string>
 				<key>name</key>
 				<string>我哦我</string>
 			</dict>
 			<dict>
 				<key>intro</key>
-				<string>琳妮</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/04/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
 			<dict>
 				<key>intro</key>
-				<string>lixianjun</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/04/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
@@ -126,20 +126,20 @@
 		<key>online</key>
 		<string>3</string>
 		<key>name</key>
-		<string>lixianjun</string>
+		<string>行政事业类</string>
 	</dict>
 	<dict>
 		<key>friends</key>
 		<array>
 			<dict>
 				<key>intro</key>
-				<string>上刊登的不成熟</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/04/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
 			<dict>
 				<key>intro</key>
-				<string>睡觉奥不擦</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/04/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
@@ -147,20 +147,20 @@
 		<key>online</key>
 		<string>2</string>
 		<key>name</key>
-		<string>lixianun</string>
+		<string>企业类</string>
 	</dict>
 	<dict>
 		<key>friends</key>
 		<array>
 			<dict>
 				<key>intro</key>
-				<string>阿什顿不擦</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/05/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
 			<dict>
 				<key>intro</key>
-				<string>合适的v</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/05/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
@@ -168,14 +168,14 @@
 		<key>online</key>
 		<string>5</string>
 		<key>name</key>
-		<string>李贤均</string>
+		<string>行政事业类</string>
 	</dict>
 	<dict>
 		<key>friends</key>
 		<array>
 			<dict>
 				<key>intro</key>
-				<string>李贤均你</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/05/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
@@ -183,14 +183,14 @@
 		<key>online</key>
 		<string>2</string>
 		<key>name</key>
-		<string>昵称</string>
+		<string>企业类</string>
 	</dict>
 	<dict>
 		<key>friends</key>
 		<array>
 			<dict>
 				<key>intro</key>
-				<string>十大就阿斯顿</string>
+				<string>http://kejian.kj2100.com/fudao/StudentCenter/jijiao/xysfdxzsydwysgldtzjd/06/webpage/start.mp4</string>
 				<key>name</key>
 				<string>昵称</string>
 			</dict>
@@ -198,7 +198,7 @@
 		<key>online</key>
 		<string>3</string>
 		<key>name</key>
-		<string>昵称</string>
+		<string>行政事业类</string>
 	</dict>
 </array>
 </plist>

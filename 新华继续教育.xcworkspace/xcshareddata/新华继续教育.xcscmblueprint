@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4001C9893F3E43DAC8748B7BF5A372B4B21D1E2D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "01c173fd-d485-584e-8bb0-687424e3b869++1750" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "01c173fd-d485-584e-8bb0-687424e3b869++1750" : 0,
+    "4001C9893F3E43DAC8748B7BF5A372B4B21D1E2D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4DC4C12E-35FE-4597-BCB2-8E832FADE461",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "01c173fd-d485-584e-8bb0-687424e3b869++1750" : "XinHuaFurtherEducation%E6%96%B0%E5%8D%8E%E7%BB%A7%E7%BB%AD%E6%95%99%E8%82%B2\/libs\/MJRefresh",
+    "4001C9893F3E43DAC8748B7BF5A372B4B21D1E2D" : "XinHuaFurtherEducation"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "新华继续教育",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "新华继续教育.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/10.30.61.30\/svn\/wly-ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "01c173fd-d485-584e-8bb0-687424e3b869++1750"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/XHKJWCodeVersionControl\/XinHuaFurtherEducation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4001C9893F3E43DAC8748B7BF5A372B4B21D1E2D"
+    }
+  ]
+}
